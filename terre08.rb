@@ -5,14 +5,14 @@ if ARGV.length != 2
     exit
 end
 
-if ARGV[0] !~ /\A-?\d+(\.\d+)?\z/ or ARGV[1] !~ /\A-?\d+\z/ # Un exposant peut être seulement un nombre entier
+if ARGV[0] !~ /\A-?\d+(\.\d+)?\z/ or ARGV[1] !~ /\A-?\d+\z/
     puts "Erreur (Une des deux entrées n'est pas un nombre)"
     exit
 end
 
 nb = ARGV[0].to_i
 expo = ARGV[1].to_i
-result = 1  # Initialisez result à 1 pour éviter la multiplication en trop
+result = 1
 
 if expo < 0
     puts "Erreur (exposant negatif)"
@@ -20,7 +20,7 @@ if expo < 0
 end
 
 expo.times do
-    result *= nb  # Multipliez result par nb, expo fois
+    result *= nb
 end
 
 puts result

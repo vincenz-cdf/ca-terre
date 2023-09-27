@@ -4,7 +4,14 @@ if ARGV.length != 3
     puts 'Veuillez fournir exactement trois arguments.'
     exit
 end
-  
+
+(ARGV.length).times do |i|
+    if ARGV[i] !~ /^\d+$/
+        puts "Erreur"
+        exit
+    end
+end
+
 a, b, c = ARGV.map(&:to_i)
   
 if a == b or b == c or a == c
